@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Skuteczna nauka jezyków obcych</title>
+
+    <!-- Bootstrap -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!--plugins-->
+    <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="bower_components/flexslider/flexslider.css" rel="stylesheet">
+    <link href="bower_components/lightbox2/dist/css/lightbox.css" rel="stylesheet">
+    <link href="owl-carousel/owl.carousel.css" rel="stylesheet">
+    <link href="owl-carousel/owl.theme.css" rel="stylesheet">
+    <link href="owl-carousel/owl.transitions.css" rel="stylesheet">
+    <link href="et-line-icons/style.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <!--custom css file-->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body data-spy="scroll">
+<!-- Static navbar -->
+<nav class="navbar header-v1 header-transparent navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header scroll-to">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">Languo</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+
+            <ul class="nav scroll-to navbar-nav">
+                <li class="active"><a href="index.html">home</a></li>
+                <li><a href="#pricing">o nas</a></li>
+                <li><a href="#pricing">oferta</a></li>
+                <li><a href="#contact">kontakt</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="button-nav"><a href="#contact" >Zaloguj się</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div><!--/.container-fluid -->
+</nav><!--navigation end here-->
+
+<section id="home" class="banner-intro banner-slider">
+    <div class="banner-inner">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8  col-sm-offset-2 text-center wow animated bounceIn">
+                    <h1>Sekcja powtórek</h1>
+                    <p class="lead">
+                        W dniu dzisiejszym masz do powtórzenia 50 słów.
+                    </p>
+                    <div class="scroll-to banner-buttons">
+                        <a href="#services" class="btn btn-lg btn-skin btn-radius">Powtórz swoje słówka<i class="fa fa-angle-down"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--modal of video-->
+<!-- Modal -->
+<div class="modal video-modal fade" id="video-popup" tabindex="-1" role="dialog" aria-labelledby="video-popup">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" class="fa fa-times"></span></button>
+            </div>
+            <div class="modal-body">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe id="vimeo-video" src="http://player.vimeo.com/video/57175742"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--end the modal of video-->
+
+
+<!--services-->
+<section id="services" class="services-section">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2">
+                <ul class="list-inline text-center tabs-navigation" role="tablist">
+
+                    <li role="presentation" class="active">
+                        <a href="#repetitions" aria-controls="repetitions" role="tab" data-toggle="tab"><span><i class="icon-pencil"></i></span>Powtórki</a>
+                    </li>
+
+                    <li role="presentation">
+                        <a href="#newWords" aria-controls="newWords" role="tab" data-toggle="tab"><span><i class="icon-mic"></i></span>Nowe słowa</a>
+                    </li>
+
+                    <li role="presentation">
+                        <a href="#settings" aria-controls="settings" role="tab" data-toggle="tab"><span><i class="icon-gears"></i></span>Ustawienia</a>
+                    </li>
+
+                    <li role="presentation">
+                        <a href="#results" aria-controls="results" role="tab" data-toggle="tab"><span><i class="icon-trophy"></i></span>Wyniki</a>
+                    </li>
+                </ul>
+            </div>
+        </div><!--tabs header row end-->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="tab-content service-tab-content">
+
+                    <!--//******************************************************************************************************************************************************* !-->
+
+                    <div role="tabpanel" class="tab-pane active" id="repetitions" >
+                        <div class="row">
+                            <div class="col-sm-6 col-sm-offset-3 text-center animated fadeInUp">
+                                <div class="col-sm-8 col-sm-offset-2 center-title" id="repetitionsInitial">
+                                    <br><br>
+                                    <button class="btn-lg btn-skin" id="startLearningButton" onclick="startLearningScript(), getWordsFromDatabase()">Rozpocznij powtarzanie słówek</button>
+                                </div>
+                                <div class="col-sm-8 col-sm-offset-2 center-title" id="repetitionsMainContent1" style="visibility: hidden;">
+                                    <h2 id="text1">Polskie słowo</h2>
+                                    <p id="text2">Polskie zdanie tłumaczące angielskie zdanie napisane powyżej</p>
+                                    <br><br>
+                                    <button class="btn-lg btn-skin" id="showWordButton" onclick="showWordButtonOnclick()">Pokaż</button>
+                                </div>
+                                <div class="col-sm-8 col-sm-offset-2 center-title" id="repetitionsMainContent2" style="visibility: hidden;">
+                                    <h2 id="text3">English word</h2>
+                                    <p id="text4">Sentence describing the use of this particular word to be added here</p>
+                                    <br><br><br>
+                                    <button class="btn-lg btn-skin" id="knowButton" onclick="knowButtonOnclick(), updateWordsInDatabase()">Tak, umiem</button>
+                                    <button class="btn-lg btn-skin" id="notKnowButton" onclick="notKnowButtonOnclick(), updateWordsInDatabaseNotKnow()">Nie umiem</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--tab content end-->
+
+                    <!--//******************************************************************************************************************************************************* !-->
+                    <div role="tabpanel" class="tab-pane" id="newWords">
+                        <div class="row">
+                            <div class="col-sm-6 col-sm-offset-3 text-center animated fadeInUp">
+                                <div class="am-content">
+                                    <div class="main-content">
+                                        <!--Select & Option Elements-->
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="panel-body">
+                                                    <form action="#" style="border-radius: 0px;" class="form-horizontal group-border-dashed" method="GET">
+
+                                                        <div class="form-group">
+                                                            <label class="col-sm-3 control-label">Liczba słów</label>
+                                                            <div class="col-sm-6">
+                                                                <select class="form-control" id="wordsNumber">
+                                                                    <option value="10">10</option>
+                                                                    <option value="25">25</option>
+                                                                    <option selected value="50">50</option>
+                                                                    <option value="100">100</option>
+                                                                    <option value="150">150</option>
+                                                                    <option value="200">200</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label class="col-sm-3 control-label">Poziom</label>
+                                                            <div class="col-sm-6">
+                                                                <select class="form-control" id="wordsLevel">
+                                                                    <option value="A1">A1</option>
+                                                                    <option value="A2">A2</option>
+                                                                    <option selected value="B1">B1</option>
+                                                                    <option value="B2">B2</option>
+                                                                    <option value="C1">C1</option>
+                                                                    <option value="C2">C2</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label class="col-sm-3 control-label">Obszar wiedzy</label>
+                                                            <div class="col-sm-6">
+                                                                <select class="form-control" id="wordsKnowledgeArea" disabled>
+                                                                    <option selected value="Wszystkie">Wszystkie</option>
+                                                                    <option value="Astronomia">Astronomia</option>
+                                                                    <option value="Biznes">Biznes i ekonomia</option>
+                                                                    <option value="Prawo">Prawo</option>
+                                                                    <option value="Medycyna">Medycyna</option>
+                                                                    <option value="Budownictwo">Budownictwo</option>
+                                                                    <option value="Mechanika">Mechanika</option>
+                                                                    <option value="Fizyka">Fizyka</option>
+                                                                    <option value="Chemia">Chemia</option>
+                                                                    <option value="Ogolne">Słowa i wyrażenia ogólne</option>
+                                                                    <option value="Idiomy">Idiomy</option>
+                                                                    <option value="Powiedzenia">Powiedzenia</option>
+                                                                    <option value="Dom">Dom i ogród</option>
+                                                                    <option value="Praca">Praca</option>
+                                                                    <option value="Hobby">Hobby i czas wolny</option>
+                                                                    <option value="Sport">Sport</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label class="col-sm-3 control-label">Część mowy</label>
+                                                            <div class="col-sm-6">
+                                                                <select class="form-control" id="wordsSpeechPart" disabled>
+                                                                    <option selected value="Wszystkie">Wszystkie</option>
+                                                                    <option value="Rzeczowniki">Rzeczowniki</option>
+                                                                    <option value="Czasowniki">Czasowniki</option>
+                                                                    <option value="Przymiotniki">Przymiotniki</option>
+                                                                    <option value="Przyslowki">Przysłówki</option>
+                                                                    <option value="Przyimki">Przyimki</option>
+                                                                    <option value="Zaimki">Zaimki</option>
+                                                                    <option value="Liczebniki">Liczebniki</option>
+                                                                    <option value="Spojniki">Spójniki</option>
+                                                                    <option value="Pozostale">Pozostałe</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <br><br>
+                                                    </form>
+                                                    <div class="col-sm-8 col-sm-offset-2 center-title">
+                                                        <button class="btn-lg btn-skin" id="addNewWordsButton" onclick="addNewWordsToLearnt()">Wybierz słowa</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--tab content end-->
+
+                    <!--//******************************************************************************************************************************************************* !-->
+                    <div role="tabpanel" class="tab-pane" id="settings">
+                        <div class="row">
+                            <div class="col-sm-6 col-sm-offset-3 text-center animated fadeInUp">
+                                <div class="am-content">
+                                    <div class="main-content">
+                                        <!--Select & Option Elements-->
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="panel-body">
+                                                    <form action="#" style="border-radius: 0px;" class="form-horizontal group-border-dashed" method="GET">
+
+                                                        <div class="form-group">
+                                                            <label class="col-sm-3 control-label">Język uczony</label>
+                                                            <div class="col-sm-6">
+                                                                <select class="form-control" id="defaultLanguageLearnt">
+                                                                    <option selected value="Angielski">Angielski</option>
+                                                                    <option value="Niemiecki">Niemiecki</option>
+                                                                    <option value="Francuski">Francuski</option>
+                                                                    <option value="Hiszpański">Hiszpański</option>
+                                                                    <option value="Włoski">Włoski</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label class="col-sm-3 control-label">Język ojczysty</label>
+                                                            <div class="col-sm-6">
+                                                                <select class="form-control" id="defaultLanguageNative" disabled>
+                                                                    <option selected value="Polski">Polski</option>
+                                                                    <option value="Angielski">Angielski</option>
+                                                                    <option value="Niemiecki">Niemiecki</option>
+                                                                    <option value="Francuski">Francuski</option>
+                                                                    <option value="Hiszpański">Hiszpański</option>
+                                                                    <option value="Włoski">Włoski</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label class="col-sm-3 control-label">Domyślna liczba słów do nauki</label>
+                                                            <div class="col-sm-6">
+                                                                <select class="form-control" id="defaultWordsNumber">
+                                                                    <option value="10">10</option>
+                                                                    <option value="25">25</option>
+                                                                    <option selected value="50">50</option>
+                                                                    <option value="100">100</option>
+                                                                    <option value="150">150</option>
+                                                                    <option value="200">200</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label class="col-sm-3 control-label">Domyślny poziom nauki</label>
+                                                            <div class="col-sm-6">
+                                                                <select class="form-control" id="defaultWordLevelOption">
+                                                                    <option value="a1">A1</option>
+                                                                    <option value="a2">A2</option>
+                                                                    <option selected value="b1">B1</option>
+                                                                    <option value="b2">B2</option>
+                                                                    <option value="c1">C1</option>
+                                                                    <option value="c2">C2</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label class="col-sm-3 control-label">Opcje dźwięku</label>
+                                                            <div class="col-sm-6">
+                                                                <select class="form-control" id="defaultSoundSettings" disabled>
+                                                                    <option selected value="Slowko">Odtwarzaj samo słówko</option>
+                                                                    <option value="Zdanie">Odtwarzaj samo zdanie</option>
+                                                                    <option value="SlowkoZdanie">Odtwarzaj zarówno słóko jak i zdanie</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label class="col-sm-3 control-label">Współczynnik zapamiętywania</label>
+                                                            <div class="col-sm-6">
+                                                                <select class="form-control" id="defaultRememberingCoefficient" disabled>
+                                                                    <option value="1">1</option>
+                                                                    <option value="2">2</option>
+                                                                    <option selected value="3">3</option>
+                                                                    <option value="4">4</option>
+                                                                    <option value="5">5</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                    <br><br>
+                                                    <div class="col-sm-8 col-sm-offset-2 center-title">
+                                                        <button class="btn-lg btn-skin" id="saveUserSettingsButton" onclick="saveUserSettings()">Zapisz ustawienia</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--tab content end-->
+
+                    <!--//******************************************************************************************************************************************************* !-->
+                    <div role="tabpanel" class="tab-pane" id="results">
+                        <div class="row">
+                            <div class="col-sm-6 col-sm-offset-3 text-center animated fadeInUp">
+                                <div class="col-sm-8 col-sm-offset-2 center-title">
+
+                                    <h1><p>Procent nauczonych słów z danego poziomu</p></h1>
+                                    <br>
+                                    <p>Poziom A1 - 1538 słów</p>
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width:4%">
+                                            0%
+                                        </div>
+                                    </div>
+
+                                    <p>Poziom A2 - 1690 słów</p>
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width:4%">
+                                            0%
+                                        </div>
+                                    </div>
+
+                                    <p>Poziom B1 - 2103 słów</p>
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width:4%">
+                                            0%
+                                        </div>
+                                    </div>
+
+                                    <p>Poziom B2 - 2312 słów</p>
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width:4%">
+                                            0%
+                                        </div>
+                                    </div>
+
+                                    <p>Poziom C1 - 2859 słów</p>
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width:4%">
+                                            0%
+                                        </div>
+                                    </div>
+
+                                    <p>Poziom C2 - 2432 słów</p>
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width:4%">
+                                            0%
+                                        </div>
+                                    </div>
+                                    <br><br>
+                                    <button class="btn-lg btn-skin" id="refreshResultsButton">Odśwież</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--tab content end-->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--end services-->
+
+
+<!--********************************************************************   scripts   ********************************************************************************************-->
+
+<script>
+    function startLearningScript(){
+        document.getElementById("repetitionsInitial").style.display = "none";
+        document.getElementById("repetitionsMainContent1").style.visibility = "visible";
+    }
+
+    function showWordButtonOnclick(){
+        document.getElementById("repetitionsMainContent2").style.visibility = "visible";
+        playSound();
+    }
+
+    function knowButtonOnclick(){
+        document.getElementById("repetitionsInitial").style.display = "none";
+        document.getElementById("repetitionsMainContent2").style.visibility = "hidden";
+    }
+
+    function notKnowButtonOnclick(){
+        document.getElementById("repetitionsInitial").style.display = "none";
+        document.getElementById("repetitionsMainContent2").style.visibility = "hidden";
+    }
+</script>
+
+<script>
+    function updateWordsInDatabase() {
+        var sqlString = document.getElementById("text1").innerText;
+        if (window.XMLHttpRequest) {
+            // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                //localWordsToLearn = xmlhttp.responseText;
+            }
+        };
+        xmlhttp.open("GET","phpUpdateWordsInDatabase.php?q="+ sqlString);
+        xmlhttp.send();
+
+        getWordsFromDatabase();
+    }
+
+    function updateWordsInDatabaseNotKnow() {
+        var sqlString = document.getElementById("text1").innerText;
+        if (window.XMLHttpRequest) {
+            // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                //localWordsToLearn = xmlhttp.responseText;
+            }
+        };
+        xmlhttp.open("GET","phpUpdateWordsInDatabaseNotKnow.php?q="+ sqlString);
+        xmlhttp.send();
+
+        getWordsFromDatabase();
+    }
+
+    function getWordsFromDatabase() {
+        if (window.XMLHttpRequest) {
+            // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                var responseText = xmlhttp.responseText;
+                var responseTextSplit = responseText.split(";");
+                document.getElementById("text1").innerHTML = responseTextSplit[0];
+                document.getElementById("text2").innerHTML = responseTextSplit[2];
+                document.getElementById("text3").innerHTML = responseTextSplit[1];
+                document.getElementById("text4").innerHTML = responseTextSplit[3];
+            }
+        };
+        xmlhttp.open("GET","phpGetWord.php?q=");
+        xmlhttp.send();
+    }
+
+    function addNewWordsToLearnt() {
+        var wordsNumber = $("#wordsNumber option:selected").text();
+        var wordsLevel = $("#wordsLevel option:selected").text();
+        var wordsKnowledgeArea = $("#wordsKnowledgeArea option:selected").text();
+        var wordsSpeechPart = $("#wordsSpeechPart option:selected").text();
+
+        var sqlString = wordsNumber + ";" + wordsLevel + ";" + wordsKnowledgeArea + ";"+ wordsSpeechPart;
+        if (window.XMLHttpRequest) {
+            // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                //localWordsToLearn = xmlhttp.responseText;
+            }
+        };
+        xmlhttp.open("GET","phpSelectNewWords.php?q="+ sqlString);
+        xmlhttp.send();
+        //alert(sqlString);
+        alert("You have successfully added words to your database!")
+    }
+
+    function updateSettingsToDatabase() {
+        var sqlString = document.getElementById("sqlString").innerText;
+        if (window.XMLHttpRequest) {
+            // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                //localWordsToLearn = xmlhttp.responseText;
+            }
+        };
+        xmlhttp.open("GET","writeWords.php?q="+ sqlString);
+        xmlhttp.send();
+        //alert(sqlString);
+    }
+
+    function saveUserSettings() {
+        var defaultLanguageLearnt = $("#defaultLanguageLearnt option:selected").text();
+        var defaultLanguageNative = $("#defaultLanguageNative option:selected").text();
+        var defaultWordsNumber = $("#defaultWordsNumber option:selected").text();
+        var defaultWordLevelOption = $("#defaultWordLevelOption option:selected").text();
+        var defaultSoundSettings = $("#defaultSoundSettings option:selected").text();
+        var defaultRememberingCoefficient = $("#defaultRememberingCoefficient option:selected").text();
+
+        var sqlString = defaultLanguageLearnt + ";" + defaultLanguageNative + ";" + defaultWordsNumber + ";"+ defaultWordLevelOption + ";"+ defaultSoundSettings + ";"+ defaultRememberingCoefficient;
+        if (window.XMLHttpRequest) {
+            // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                //localWordsToLearn = xmlhttp.responseText;
+            }
+        };
+        xmlhttp.open("GET","phpSaveSettings.php?q="+ sqlString);
+        xmlhttp.send();
+        alert("You have successfully changed your settings!")
+
+        $('#wordsNumber').val(defaultWordsNumber).change();
+        $('#wordsLevel').val(defaultWordLevelOption).change();
+    }
+
+    function playSound(){
+        var word = document.getElementById("text3").innerText;
+        word = word.toLowerCase();
+        var wordFirstLetter = word.charAt(0).toLowerCase();
+        //http://www.anglaisfacile.com/free/words/b/buffalo.wav
+        var wordFirst = "http://www.anglaisfacile.com/free/words/";
+
+        var path = wordFirst.concat(wordFirstLetter, "/", word, ".wav");
+
+        var audio = new Audio(path);
+        audio.play();
+        document.getElementById("buttonOK").innerText = path;
+    }
+</script>
+
+
+<script>//keyboard how to use it TA CZĘŚĆ NA PEWNO DO POPRAWY!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+document.onkeydown = function (e) {
+    var keyCode = e.keyCode;
+    if(keyCode == 49 && document.getElementById('startLearningButton').style.display == 'none' && document.getElementById('knowWordButton').style.visibility == 'visible') {
+        $('#knowWordButton').click();
+    } else if (keyCode == 50 && document.getElementById('startLearningButton').style.display == 'none' && document.getElementById('knowWordButton').style.visibility == 'visible') {
+        $('#notKnowWordButton').click();
+    } else if (keyCode == 13 && document.getElementById('startLearningButton').style.display == 'none') {
+        $('#showWordButton').click();
+    } else if (keyCode == 51 && document.getElementById('startLearningButton').style.display != 'none') {
+        //$('#startLearningButton').click();
+    }
+}
+</script>
+
+<!--********************************************************************   end scripts   ********************************************************************************************-->
+
+<!--footer start-->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4 margin-b-30">
+                <h2>Languo</h2>
+                <p>
+                    Zadowolenie naszych klientow jest dla nas kluczowe. Stworzyliśmy system w ramach którego proponujemy proste i jasne reguły gry od samego początku nauki. Twoja wiedza jest dla nas priorytetem.
+                </p>
+                <div class="space-20"></div>
+                <a href="#contact" class="btn btn-skin btn-radius btn-lg">Zaloguj się już dziś!</a>
+            </div>
+            <div class="col-sm-4 margin-b-30">
+                <h2>Kontakt</h2>
+                <ul class="list-unstyled clearfix">
+                    <li class="clearfix">
+                        <i class="fa fa-map-marker"></i>
+                        <span>Al. Jana Pawła II 25, 00-854 Warszawa, Polska</span>
+                    </li>
+                    <li class="clearfix">
+                        <i class="fa fa-envelope-o"></i>
+                        <span><a href='#contact'>kontakt@languo.pl</a></span>
+                    </li>
+                    <li class="clearfix">
+                        <i class="fa fa-phone"></i>
+                        <span>+48 22 39 39 342</span>
+                    </li>
+                </ul>
+            </div><!--col4 end-->
+            <div class="col-sm-4 margin-b-30">
+                <h2>Poznaj nas</h2>
+                <ul class="list-inline clearfix">
+                    <li><a href='#'><i class="fa fa-facebook-official"></i></a></li>
+                    <li><a href='#'><i class="fa fa-twitter"></i></a></li>
+                    <li><a href='#'><i class="fa fa-google-plus"></i></a></li>
+                    <li><a href='#'><i class="fa fa-linkedin"></i></a></li>
+                    <li><a href='#'><i class="fa fa-youtube"></i></a></li>
+                </ul>
+            </div><!--col4 end-->
+        </div><!--row end-->
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <div class="footer-bottom">
+                    <ul class="list-inline">
+                        <li><a href='#'>Home</a></li>
+                        <li><a href='#'>Wiadomości</a></li>
+                        <li><a href='#'>Pomoc</a></li>
+                        <li><a href='#'>Warunki</a></li>
+                        <li><a href='#'>Prywatność</a></li>
+                    </ul>
+                    <span>&copy; Wszelkie prawa zastrzeżone. Languo</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--footer end-->
+
+
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="js/jquery-migrate.min.js" type="text/javascript"></script>
+<script src="js/jquery.easing.1.3.min.js" type="text/javascript"></script>
+<script src="js/jquery.backstretch.min.js" type="text/javascript"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="js/smoothscroll.js"></script>
+<script src="bower_components/wow/dist/wow.min.js"></script>
+<script src="bower_components/lightbox2/dist/js/lightbox.min.js" type="text/javascript"></script>
+<script src="owl-carousel/owl.carousel.min.js" type="text/javascript"></script>
+<script src="js/modernizr.custom.97074.js" type="text/javascript"></script>
+<script src="js/parallax.min.js" type="text/javascript"></script>
+<script src="js/custom.js" type="text/javascript"></script>
+<!-- Vimeo video API -->
+<script src="http://a.vimeocdn.com/js/froogaloop2.min.js"></script>
+<script type="text/javascript" src="js/vimeo.js"></script>
+</body>
+</html>
